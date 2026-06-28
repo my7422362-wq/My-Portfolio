@@ -137,11 +137,11 @@ export default function Hero() {
               <div className="flex flex-col gap-5">
                
 
-                <h1 className="text-[50px] leading-[0.9] font-bold tracking-[-1.3px] text-white md:text-[54px]">
-                  <span className="block whitespace-nowrap">Frontend Developer</span>
+                <h1 className="text-[36px] leading-[0.95] font-bold tracking-[-1.3px] text-white sm:text-[42px] md:text-[54px]">
+                  <span className="block">Frontend Developer</span>
                   <br />
-                  <span className="whitespace-nowrap -mt-[0.16em]">
-                     <GradientText>UI/UX Designer</GradientText>
+                  <span className="-mt-[0.12em] sm:whitespace-nowrap">
+                    <GradientText>UI/UX Designer</GradientText>
                   </span>
                 </h1>
 
@@ -207,16 +207,16 @@ export default function Hero() {
                     <div className="relative mx-auto flex w-full max-w-[520px] items-center justify-center"> 
                       {/* Static premium profile image (fade-in only) */}
                     <motion.div
-                      className="h-[390px] w-[390px] rounded-full overflow-hidden"
+                      className="h-[clamp(240px,70vw,390px)] w-[clamp(240px,70vw,390px)] rounded-full overflow-hidden"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.65, delay: 0.2, ease: 'easeOut' }}
                     >
-                    <img
-                    src="/me.jpeg"
-                    alt="Mohamed Youssif"
-                    className="h-[390px] w-[390px] rounded-full object-cover"
-/>
+                      <img
+                        src="/me.jpeg"
+                        alt="Mohamed Youssif"
+                        className="h-full w-full rounded-full object-cover"
+                      />
                     </motion.div>
 
 

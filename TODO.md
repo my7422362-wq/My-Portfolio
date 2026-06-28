@@ -1,9 +1,10 @@
 # TODO
 
-- [x] Update Navbar visibility logic to hide on first downward scroll and only re-show at very top (scrollY near 0) with smooth fade + translateY.
-- [ ] Ensure Hero and smooth section scrolling remain unaffected.
-- [ ] Reduce Hero heading size by ~10–15% (no other typography changes).
-- [ ] Reduce profile image container by ~5–8% (scale wrapper + img together; preserve border/shadows/radius).
-- [ ] Rebalance spacing between heading and image to ensure no touch/overlap.
-- [ ] Verify responsiveness unchanged (no breakpoint/layout changes).
+- [ ] Run full mobile responsiveness audit and fix ALL horizontal overflow / clipping
+- [x] Hero: make typography responsive, remove desktop-only nowrap on mobile, resize profile image responsively, ensure absolute decorative elements can’t cause overflow
+- [ ] Navbar: keep desktop untouched; fix mobile dropdown sizing to prevent overflow; ensure touch targets and animations remain
+- [ ] About / Projects / Skills / Contact / Footer: replace risky fixed sizes with responsive equivalents while preserving desktop look
+- [ ] Images: ensure responsive sizing everywhere (max-w-full, preserve aspect)
+- [ ] Validate zero horizontal scrolling at: 320, 360, 375, 390, 414, 430, 768, 1024, 1440
+- [ ] Build/test: run project build and manually verify breakpoints
 
