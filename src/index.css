@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: "Geist";
+  src: local("Geist"), local("Geist Sans");
+  font-display: swap;
+}
+
+:root {
+  --bg: #050816;
+  --cards: #0B1020;
+  --primary: #8B5CF6;
+  --secondary: #06B6D4;
+  --text: #FFFFFF;
+  --muted: #94A3B8;
+
+  color-scheme: dark;
+  background: var(--bg);
+
+  font-family: "Geist Sans", Geist, ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Ensure no horizontal scroll from effects */
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100svh;
+  overflow-x: clip;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: "Geist";
+  src: local("Geist"), local("Geist Sans");
+  font-display: swap;
+}
+
+:root {
+  --bg: #050816;
+  --cards: #0B1020;
+  --primary: #8B5CF6;
+  --secondary: #06B6D4;
+  --text: #FFFFFF;
+  --muted: #94A3B8;
+
+  color-scheme: dark;
+  background: var(--bg);
+
+  font-family: "Geist Sans", Geist, ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Ensure no horizontal scroll from effects */
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100svh;
+  overflow-x: clip;
+}
+
+
+
+
