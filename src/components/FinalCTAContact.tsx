@@ -49,7 +49,8 @@ const ContactRow = ({
       href={href}
       target={isHttp ? '_blank' : undefined}
       rel={isHttp ? 'noreferrer' : undefined}
-      className="group relative flex items-center justify-between gap-4 rounded-2xl border border-white/5 bg-white/[0.02] px-4 py-3 transition"
+      className="group relative flex items-center justify-between gap-4 rounded-2xl border border-white/5 bg-white/[0.02] px-4 py-3 min-h-11 transition"
+
       whileHover={{ y: -3 }}
       transition={{ duration: 0.28, ease: 'easeOut' }}
     >
@@ -70,8 +71,11 @@ const ContactRow = ({
 
       <span className="relative z-10 min-w-0 flex-1">
         <span className="block text-[12px] font-semibold tracking-[0.18em] text-white/60">{label}</span>
-        <span className="block truncate pt-1 text-sm font-semibold text-white/90">{value}</span>
+        <span className="block min-w-0 pt-1 text-sm font-semibold text-white/90 break-words overflow-wrap:anywhere">
+          {value}
+        </span>
       </span>
+
 
       <motion.span
         aria-hidden
@@ -118,22 +122,26 @@ export default function FinalCTAContact() {
         <div className="absolute inset-0 opacity-[0.10] [background-image:linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:42px_42px]" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-6xl px-6">
+      <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 md:px-6">
+
+
         <div className="grid gap-8 lg:gap-10 lg:grid-cols-2 lg:items-start">
           {/* Left */}
           <div className="flex flex-col gap-6 min-w-0">
+
             <SoftScrollReveal>
               <SectionLabel>CONTACT</SectionLabel>
             </SoftScrollReveal>
 
             <SoftScrollReveal delay={0.05}>
-              <h2 className="text-[44px] leading-[1.04] font-bold tracking-[-1px] text-white md:text-[56px]">
+              <h2 className="text-[44px] leading-[1.04] font-bold tracking-[-1px] text-white md:text-[56px] [@media(max-width:389px)]:text-[36px]">
                Let's Build Together
               </h2>
+
             </SoftScrollReveal>
 
             <SoftScrollReveal delay={0.1}>
-              <p className="max-w-[560px] text-base leading-relaxed text-white/70 md:text-lg">
+              <p className="max-w-[560px] text-base leading-relaxed text-white/70 md:text-lg [@media(max-width:389px)]:text-[15px]">
                 
 I build modern, responsive and
 high-performance web experiences.
@@ -141,6 +149,7 @@ high-performance web experiences.
                 <br />
                 Available for freelance projects, internships and long-term opportunities.
               </p>
+
             </SoftScrollReveal>
 
            
@@ -227,14 +236,16 @@ high-performance web experiences.
             </div>
 
             <motion.div
-              className="mt-6 flex items-center justify-between gap-4 rounded-2xl border border-white/5 bg-white/[0.02] px-4 py-3"
+              className="mt-6 flex flex-col items-center justify-between gap-4 rounded-2xl border border-white/5 bg-white/[0.02] px-4 py-4 sm:flex-row sm:items-center sm:justify-between"
+
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-15% 0px -15% 0px' }}
               transition={{ duration: 0.55, ease: 'easeOut', delay: 0.08 }}
             >
-              <span className="text-sm font-semibold text-white/90">Let's make it real.</span>
-              <span className="text-xs font-semibold tracking-[0.18em] text-white/50">READY WHEN YOU ARE</span>
+              <span className="text-[14px] leading-tight font-semibold text-white/90 sm:text-sm">Let's make it real.</span>
+              <span className="text-[11px] font-semibold tracking-[0.18em] text-white/50 sm:text-xs">READY WHEN YOU ARE</span>
+
             </motion.div>
           </motion.div>
         </div>
