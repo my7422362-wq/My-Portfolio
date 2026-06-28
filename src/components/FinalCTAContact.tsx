@@ -108,7 +108,7 @@ export default function FinalCTAContact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#0B1020] py-20 md:py-28"
+      className="relative overflow-hidden bg-[#0B1020] py-16 sm:py-20 md:py-28"
       aria-label="Final call to action and contact information"
     >
       {/* subtle gradient glow */}
@@ -119,9 +119,9 @@ export default function FinalCTAContact() {
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+        <div className="grid gap-8 lg:gap-10 lg:grid-cols-2 lg:items-start">
           {/* Left */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6 min-w-0">
             <SoftScrollReveal>
               <SectionLabel>CONTACT</SectionLabel>
             </SoftScrollReveal>
@@ -177,7 +177,7 @@ high-performance web experiences.
 
           {/* Right: premium information panel */}
           <motion.div
-            className="relative rounded-[24px] border border-white/10 bg-[#0B1020]/30 p-5 md:p-6"
+            className="relative rounded-[24px] border border-white/10 bg-[#0B1020]/30 p-5 md:p-6 min-w-0"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-12% 0px -12% 0px' }}
@@ -196,7 +196,7 @@ high-performance web experiences.
               </div>
             </div>
 
-            <div className="mt-5 grid gap-3">
+            <div className="mt-5 grid gap-3 w-full">
               <ContactRow
                 href="mailto:moyoussef2192004@gmail.com"
                 icon={<Mail className="h-4 w-4 text-[#06B6D4]" />}
