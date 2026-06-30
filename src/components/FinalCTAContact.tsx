@@ -49,7 +49,8 @@ const ContactRow = ({
       href={href}
       target={isHttp ? '_blank' : undefined}
       rel={isHttp ? 'noreferrer' : undefined}
-      className="group relative flex items-center justify-between gap-4 rounded-2xl border border-white/5 bg-white/[0.02] px-4 py-3 min-h-11 transition"
+      className="group relative flex items-center justify-between gap-4 rounded-2xl border border-white/5 bg-white/[0.02] px-4 py-3 min-h-11 transition overflow-x-hidden"
+
 
       whileHover={{ y: -3 }}
       transition={{ duration: 0.28, ease: 'easeOut' }}
@@ -65,13 +66,14 @@ const ContactRow = ({
         }}
       />
 
-      <span className="relative z-10 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition group-hover:border-white/20">
+      <span className="relative z-10 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition group-hover:border-white/20 sm:h-10 sm:w-10 [@media(max-width:639px)]:h-9 [@media(max-width:639px)]:w-9">
         {icon}
       </span>
 
-      <span className="relative z-10 min-w-0 flex-1">
-        <span className="block text-[12px] font-semibold tracking-[0.18em] text-white/60">{label}</span>
-        <span className="block min-w-0 pt-1 text-sm font-semibold text-white/90 break-words overflow-wrap:anywhere">
+      <span className="relative z-10 min-w-0 flex-1 overflow-hidden flex items-start">
+
+        <span className="block text-[12px] font-semibold tracking-[0.18em] text-white/60 [@media(max-width:639px)]:text-[11px]">{label}</span>
+        <span className="block min-w-0 pt-1 text-sm font-semibold text-white/90 break-all overflow-wrap:anywhere [word-break:break-word] [@media(min-width:640px)]:break-words [@media(max-width:639px)]:text-[13px]">
           {value}
         </span>
       </span>
@@ -79,8 +81,9 @@ const ContactRow = ({
 
       <motion.span
         aria-hidden
-        className="relative z-10 ml-2 flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition"
+        className="relative z-10 ml-2 shrink-0 flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition [@media(max-width:639px)]:h-8 [@media(max-width:639px)]:w-8"
       >
+
         <motion.span
           className="text-white/70"
           initial={{ x: 0 }}
@@ -186,7 +189,7 @@ high-performance web experiences.
 
           {/* Right: premium information panel */}
           <motion.div
-            className="relative rounded-[24px] border border-white/10 bg-[#0B1020]/30 p-5 md:p-6 min-w-0"
+            className="relative rounded-[24px] border border-white/10 bg-[#0B1020]/30 p-5 md:p-6 min-w-0 w-full overflow-x-hidden"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-12% 0px -12% 0px' }}
