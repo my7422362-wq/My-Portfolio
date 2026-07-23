@@ -1,12 +1,9 @@
-# TODO - Contact section responsive refactor
+# TODO
 
-## Steps
-- [x] Step 1: Update `ContactRow` value styling to prevent clipping/overflow on mobile (remove `truncate`, add `break-words overflow-wrap:anywhere min-w-0`, keep `flex-1`).
-- [ ] Step 2: Verify flex containers in `ContactRow` don’t constrain wrapping (add `min-w-0` where needed).
-- [ ] Step 3: Adjust outer Contact section horizontal padding for mobile while preserving desktop layout.
-- [ ] Step 4: Refactor bottom CTA card layout to stack + center on mobile, while keeping desktop layout unchanged.
-- [x] Step 5: Add tiny-screen typography tweaks for widths below 390px.
-- [x] Step 6: Ensure mobile touch targets are at least ~44px high for links/cards.
-- [ ] Step 7: Run typecheck/build and do quick visual verification (no horizontal scrolling, no clipped text).
-- [ ] Step 8: Final pass at 320/375/390/430/768/1024 to confirm zero horizontal scrolling.
+- [ ] Update `FeaturedProjects` component:
+  - [ ] Rename the secondary button label from **Code** to **GitHub**.
+  - [ ] Ensure GitHub button opens `project.githubUrl` in a new tab with `target="_blank"` and `rel="noopener noreferrer"`.
+  - [ ] Ensure View button opens `project.liveUrl` in a new tab with `target="_blank"` and `rel="noopener noreferrer"`.
+  - [ ] Update project data to use `githubUrl` and `liveUrl` per requirements.
+  - [ ] Keep all existing UI design, spacing, colors, icons, animations, and Framer Motion exactly the same (only modify link targets/labels/data keys).
 

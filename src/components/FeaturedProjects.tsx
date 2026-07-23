@@ -10,8 +10,8 @@ type Project = {
   category: string
   tech: string[]
   imageSrc: string
-  liveHref: string
-  githubHref: string
+  liveUrl: string
+  githubUrl: string
 }
 
 const SectionHeading = ({
@@ -65,7 +65,6 @@ const LuxuryButton = ({
   const base =
     'group relative inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#06B6D4]/40'
 
-
   const variantClass =
     variant === 'primary'
       ? 'bg-[#111111] text-white ring-1 ring-[#1E1E1E] hover:bg-[#111111]'
@@ -79,7 +78,7 @@ const LuxuryButton = ({
   return (
     <a
       href={href}
-      target={href.startsWith('http') ? '_blank' : undefined}
+      target="_blank"
       rel="noreferrer"
       className={base + ' ' + variantClass + ' ' + sheen}
     >
@@ -142,88 +141,129 @@ function ProjectCard({
       <div className="flex flex-1 flex-col p-4 md:p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="text-xs font-semibold tracking-[0.28em] text-white/55">
-              {project.number}
-            </div>
+            <div className="text-xs font-semibold tracking-[0.28em] text-white/55">{project.number}</div>
             <CategoryPill>{project.category}</CategoryPill>
           </div>
 
-          <div className="hidden lg:flex items-center gap-2 text-xs font-semibold text-white/55">
-            <span className="h-[1px] w-10 bg-white/10" />
-            <span className="inline-flex items-center gap-2">
-              Case study
-              <ArrowRight className="h-3.5 w-3.5 opacity-70" />
-            </span>
-          </div>
+         
         </div>
 
-        <h3 className="mt-3 text-lg font-bold tracking-[-0.3px] text-white md:text-xl">
-          {project.title}
-        </h3>
+        <h3 className="mt-3 text-lg font-bold tracking-[-0.3px] text-white md:text-xl">{project.title}</h3>
 
-        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-white/70">
-          {project.description}
-        </p>
+        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-white/70">{project.description}</p>
 
         <div className="mt-3 flex flex-wrap gap-2">
-          {project.tech.slice(0, 3).map((t) => (
+          {project.tech.map((t) => (
             <TechBadge key={t}>{t}</TechBadge>
           ))}
         </div>
 
         <div className="mt-auto pt-4 flex flex-wrap items-center gap-2">
-          <LuxuryButton
-            variant="primary"
-            href={project.liveHref}
-            icon={<ExternalLink className="h-4 w-4" />}
-          >
-            View
-          </LuxuryButton>
-          <LuxuryButton variant="secondary" href={project.githubHref}>
-            Code
-          </LuxuryButton>
+          {index === 5 ? (
+            <LuxuryButton
+              variant="primary"
+              href={'https://www.behance.net/'}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Behance
+            </LuxuryButton>
+          ) : (
+            <>
+              <LuxuryButton
+                variant="primary"
+                href={project.liveUrl}
+                icon={<ExternalLink className="h-4 w-4" />}
+              >
+                View
+              </LuxuryButton>
+              <LuxuryButton variant="secondary" href={project.githubUrl}>
+                GitHub
+              </LuxuryButton>
+            </>
+          )}
         </div>
       </div>
     </motion.div>
   )
 }
 
-
 export default function FeaturedProjects() {
   const projects: Project[] = [
     {
-      number: '01',
-      title: 'Aurora Commerce UI System',
+      number: '',
+      title: 'FreshCart – Modern E-Commerce',
       description:
-        'A luxury e-commerce interface with editorial product storytelling, composable components, and motion-driven micro-interactions that keep performance sharp.',
+        'A modern and responsive e-commerce frontend application built with React, TypeScript, and Tailwind CSS. FreshCart provides a seamless shopping experience with product browsing, category filtering, search, product details, shopping cart, wishlist, and a responsive checkout flow. The project focuses on clean architecture, reusable components, scalable code, and an optimized user experience across all devices.',
       category: 'Frontend Development',
-      tech: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-      imageSrc: '/me.jpeg',
-      liveHref: '#',
-      githubHref: '#',
+      tech: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'React Router DOM', 'React Hook Form', 'Axios'],
+      imageSrc: '/freshcart.png',
+      liveUrl: 'https://fresh-cart-ecommerce-uhhb.vercel.app/',
+      githubUrl: 'https://github.com/my7422362-wq/FreshCart-ecommerce.git',
     },
     {
-      number: '02',
-      title: 'Signal Design Kit',
+      number: '',
+      title: 'Modern Real Estate Platform',
       description:
-        'A UI/UX design system focused on typographic rhythm, accessible color, and reusable sections built for real product teams.',
+        'Developed a premium real estate web application with a modern, responsive interface using React, TypeScript, Vite, and Tailwind CSS. Implemented dynamic property listings, property details, blog pages, reusable components, client-side routing, responsive design, smooth animations, and optimized performance to create a professional real estate browsing experience.',
+      category: 'Frontend Development',
+      tech: ['React.js', 'TypeScript', 'JavaScript (ES6+)', ' React Router DOM', 'Framer Motion'],
+      imageSrc: '/homeverse.png',
+      liveUrl: 'https://homeverse-master-smoky.vercel.app/',
+      githubUrl: 'https://github.com/my7422362-wq/Homeverse-Master.git',
+    },
+    {
+      number: '',
+      title: 'Kingdom Schools – Modern Educational Platform',
+      description:
+        'Developed a fully responsive educational website for Kingdom Schools using React, TypeScript, and Tailwind CSS. The application features a modern user interface with smooth navigation, animated sections, reusable components, and optimized performance. The project focuses on delivering an intuitive user experience across all devices while maintaining clean architecture, scalability, and maintainable code. It demonstrates best practices in modern frontend development, including responsive layouts, component reusability, and professional UI design.',
+      category: 'Frontend Development',
+      tech: ['React.js', 'TypeScript', 'Tailwind CSS', 'React Router DOM', 'React Hook Form', 'Framer Motion' ],
+      imageSrc: '/kingdom.png',
+      liveUrl: 'https://kingdom-schools.vercel.app/',
+      githubUrl: 'https://github.com/my7422362-wq/kingdom-schools.git',
+    },
+
+
+{
+      number: '',
+      title: 'El Sabah – Corporate Business Website',
+      description:
+        'A high-performance business website engineered with modern frontend technologies, featuring responsive layouts, reusable components, smooth interactions, and clean, maintainable architecture.',
+      category: 'Frontend Development',
+      tech: ['React.js', 'TypeScript', 'Tailwind CSS', 'React Router DOM', 'react Hook Form'],
+      imageSrc: '/elsabah.png',
+      liveUrl: 'https://el-sabah.vercel.app/',
+      githubUrl: 'https://github.com/my7422362-wq/El---sabah.git',
+    },
+
+
+    {
+      number: '',
+      title: 'Trips – Travel & Tourism Platform',
+      description:
+        'A modern travel platform built with React, TypeScript, and Tailwind CSS, featuring a responsive interface, seamless navigation, reusable components, and an engaging user experience for discovering and exploring destinations.',
+      category: 'Frontend Development',
+      tech: ['React.js', 'TypeScript', 'Tailwind CSS', 'React Router DOM', 'react Hook Form', 'Framer Motion'],
+      imageSrc: '/trip.png',
+      liveUrl: 'https://trips-two-hazel.vercel.app/',
+      githubUrl: 'https://github.com/my7422362-wq/Trips.git',
+    },
+
+    {
+      number: '',
+      title: 'Medical Clinic',
+      description:
+        'A fully responsive Medical Clinic web application with a modern UI/UX design that simulates a real-world healthcare platform. It allows patients to browse doctors, view services, and book appointments through a smooth and intuitive user experience. The project focuses on clean architecture, usability, and performance to deliver a production-like interface for clinic management.',
       category: 'UI/UX Design',
-      tech: ['Design Tokens', 'Accessibility', 'Prototyping', 'React UI'],
-      imageSrc: '/me.jpeg',
-      liveHref: '#',
-      githubHref: '#',
+      tech: ['Figma', 'Wireframing', 'Prototyping', 'Responsive Design', 'Design System', 'UI/UX Design'],
+      imageSrc: '/medical clinic.png',
+      liveUrl: 'https://www.behance.net/gallery/245026633/Medical-Clinic-App',
+      githubUrl: '',
     },
-    {
-      number: '03',
-      title: 'Atlas Dashboard Experience',
-      description:
-        'An information-dense dashboard with handcrafted layouts, progressive disclosure, and subtle motion for clarity at speed.',
-      category: 'Frontend Development',
-      tech: ['React', 'TypeScript', 'Data UI', 'Micro-interactions'],
-      imageSrc: '/public-projects/atlas-dashboard.jpg',
-      liveHref: '#',
-      githubHref: '#',
-    },
+
+
+
   ]
 
   return (
@@ -250,5 +290,4 @@ export default function FeaturedProjects() {
     </section>
   )
 }
-
 
