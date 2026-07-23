@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, ExternalLink } from 'lucide-react'
+import { ExternalLink } from "lucide-react";
 import type { ReactNode } from 'react'
 
 
@@ -56,11 +56,15 @@ const LuxuryButton = ({
   href,
   children,
   icon,
+  target,
+  rel,
 }: {
   variant: 'primary' | 'secondary'
   href: string
   children: ReactNode
   icon?: ReactNode
+  target?: string
+  rel?: string
 }) => {
   const base =
     'group relative inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#06B6D4]/40'
@@ -78,8 +82,8 @@ const LuxuryButton = ({
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noreferrer"
+      target={target ?? '_blank'}
+      rel={rel ?? 'noreferrer'}
       className={base + ' ' + variantClass + ' ' + sheen}
     >
       {icon ? <span className="relative z-10">{icon}</span> : null}
